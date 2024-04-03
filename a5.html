@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Advance Methods and Method Chaining</title>
+</head>
+
+<body>
+
+    <h1>Assignment: 5 => Array Advance Methods Assignments Map,Filter And Reduce With Method Chaining</h1>
+    <h2>Check in Console</h2>
+
+    <script>
+
+
+
+        let numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        let oddNum = numbersArray.filter(val => val % 2 === 1);
+
+        let squareNum = oddNum.map(val => val * 2);
+        // console.log(oddNum)
+        console.log(squareNum)
+
+        // map filter 
+
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let sumArray = arr.reduce((acc, val) => acc + val);
+        console.log(sumArray)
+
+        // reduce  end
+
+
+
+        let students = [
+            {
+                name: "Hanif",
+                age: 26,
+                score: 47,
+            },
+            {
+                name: "Jeet",
+                age: 28,
+                score: 95,
+            },
+            {
+                name: "Saad",
+                age: 31,
+                score: 55,
+            },
+            {
+                name: "Hamza",
+                age: 26,
+                score: 75,
+            },
+            {
+                name: "Khizra",
+                age: 26,
+                score: 50,
+            },
+
+        ]
+
+        let lowScore = students.filter(val => val.score <= 60);
+        console.log(lowScore);
+
+        let newArray = lowScore.map(val => ({ name: val.name, score: val.score }));
+        // function(val){
+        // return  val.name  val.score
+        // return `Name: ${val.name} Score: ${val.score})`
+
+        // } );
+
+        console.log(newArray)
+
+        // Array of Object end 
+
+        let wordsArray = ["Hanif", "Jeet", "Saad", "Hamza", "Khizra"];
+
+        let newArray1 = wordsArray.filter(filterFun).map(mapFun).reduce(reduceFun);
+
+        console.log(newArray1)
+
+        function filterFun(val) {
+            return val.length <= 5;
+        };
+        function mapFun(val) {
+            return val.length
+        };
+        function reduceFun(acc, ele) {
+            return acc + ele
+        };
+    </script>
+</body>
+
+</html>

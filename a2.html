@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Based OOP Assignments </title>
+</head>
+
+<body>
+    <h1>Assignment: 2 =>Class Based OOP Assignments </h1>
+    <h2>Check in Console</h2>
+
+    <script>
+
+
+
+        // oop 
+
+        class person {
+            constructor(name, age, gender, adress) {
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+
+                this.adress = adress = {
+                    city: "Hyderabad",
+                    state: "Sindh",
+                    zipcode: 70000,
+                };
+
+            }
+            introduce() {
+                return `Name: ${this.name} Age:  ${this.age} `;
+            }
+
+        }
+
+        let hanif = new person("hanif", 26, "male");
+        console.log(hanif.introduce())
+
+        let jeet = new person("jeet", 28, "male");
+        console.log(jeet.introduce())
+
+
+        class student extends person {
+            constructor(name, age, gender, nationality) {
+                super(name, age, gender)
+                this.nationality = nationality;
+            }
+
+            introduce() {
+                return `name: ${this.name} age: ${this.nationality}`
+            }
+        }
+
+
+        let saad = new student("saad", 30, "male", "Pakistani");
+
+        console.log(saad)
+        console.log(saad.introduce())
+
+        // inheritance ended 
+
+
+        class bank {
+            #balance;
+            static bankName = "Habib Bank"
+            constructor(owner, accNum, balance) {
+                this.owner = owner;
+                this.accNum = accNum;
+                this.#balance = balance;
+            }
+
+            deposit() {
+                return `Money deposited ${this.owner} Your Balance is ${this.#balance} `
+                // return "Money deposited "+this.owner+ "your Balance is "+  getbalance()   
+            }
+
+            withdraw() {
+                return `Money withdrawn ${this.owner} Your Balance is ${this.b} `
+            }
+            static getBankInfo() {
+                console.log(this.bankName + " Cheaking Ammount")
+            }
+        }
+        let hanif2 = new bank("hanif", 123, 10000);
+        console.log(hanif2.deposit())
+        console.log(hanif2.balance)
+
+        bank.getBankInfo()
+
+        // bankacc assignment end 
+
+
+
+        class adress extends person {
+            constructor(city, state, zipcode) {
+                this.city = city;
+                this.state = state;
+                this.zipcode = zipcode;
+            }
+        }
+
+
+        let h = new person("hanif", 26, "male" + this.adress);
+
+        // let h = new person;
+        console.log(h)
+
+
+
+
+
+
+        class shape {
+            constructor(color) {
+                this.color = color;
+            }
+
+            draw() {
+                return "Drawing the shape"
+            }
+        }
+
+        class circle {
+            __proto__ = shape;
+
+
+            draw() {
+                return "Drawing the circle"
+            }
+
+        }
+
+        class rectangular {
+            __proto__ = shape;
+
+
+            draw() {
+                return "Drawing the rectangular"
+            }
+
+        }
+
+        let s = new shape("red");
+        let c = new circle("red");
+        let r = new rectangular("red");
+        console.log(s.draw())
+        console.log(c.draw())
+        console.log(r.draw())
+
+        // 2nd assignment done 
+
+
+    </script>
+</body>
+
+</html>

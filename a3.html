@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getters And Setters Assignment</title>
+</head>
+
+<body>
+    <h1>Assignment: 3 => Getters And Setters Assignment</h1>
+    <h2>Check in Console</h2>
+
+    <script>
+
+
+
+
+
+
+
+        class bankAccount {
+            #ownerName;
+            #balance;
+            #accNumber;
+            constructor(ownerName, balance, accNumber) {
+                this.#ownerName = ownerName;
+                this.#balance = balance;
+                this.#accNumber = accNumber;
+            };
+            get checkBalance() {
+                // console.log( `Your balance is : $${this.#balance}`) 
+                if (this.#balance <= 0) {
+                    console.log(`your balance is insuffucient`)
+                } else {
+                    console.log(`Your balance is : $${this.#balance}`)
+                }
+            };
+
+            set checkBalance(bal) {
+                this.#balance = bal;
+            };
+
+            get accNum() {
+                this.#accNumber = Math.random();
+                let num = (this.#accNumber * 100000);
+                num = Math.round(num);
+                console.log(`account Number : ${num}`)
+            }
+            set setval(val) {
+                this.#ownerName = val.split(" ")[0];
+                this.#balance = val.split(" ")[1]
+                console.log(`Owner: ${this.#ownerName} \nBalance: $${this.#balance}`)
+            }
+        };
+
+        // let hanif = new bankAccount("hanif",6,123)
+        // hanif.checkBalance = -2;
+        // hanif.checkBalance;
+
+        let jeet = new bankAccount();
+
+        jeet.setval = "jeet 500";
+        // console.log(jeet.accNum)
+        // jeet.checkBalance;
+        // jeet.setval
+        console.log(jeet.setval)
+        jeet.checkBalance
+
+
+        // bank account end 
+
+        class TemperatureConverter {
+            constructor(c, f) {
+                this.c = c;
+                this.f = f;
+            };
+            get Celsius() {
+                console.log(this.c)
+            };
+            get Fahrenheit() {
+                console.log(this.f)
+            };
+            set tempC(temp) {
+                // let c = this.c;
+                // let f = this.f;
+
+                console.log(`Celsius: ${temp} to Fahrenheit:  ${9 / 5 * temp + 32}`)
+                console.log(`Fahrenheit: ${temp} to Celsius: ${(temp - 32) * (5 / 9)}`)
+            }
+        };
+
+        let ctof = new TemperatureConverter();
+        // ctof.c = 20;
+        // ctof.f = 102;
+        ctof.tempC = 35;
+
+        // temp end
+
+
+
+    </script>
+
+</body>
+
+</html>

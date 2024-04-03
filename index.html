@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 5 Assignments javascript</title>
+</head>
+
+<body>
+    <h1>Assignment: 01 => Prototype</h1>
+    <h2>Check in Console</h2>
+
+    <a href="a2.html">Class Based OOP Assignments</a> <br><br>
+    <a href="a3.html">Getters And Setters Assignment</a> <br><br>
+    <a href="a4.html">Rest And Spread Operator Assignments</a> <br><br>
+    <a href="a5.html">Array Advance Methods Assignments Map,Filter And Reduce With Method Chaining</a> <br><br>
+
+    <script>
+        function car(make, model, year) {
+
+            this.make = make;
+            this.model = model;
+            this.year = year;
+        };
+
+
+        car.prototype.startengine = function () {
+            return this.make + " Engine Started"
+        }
+
+        let corrola = new car("Corrola", 1.6, 2010);
+        let city = new car("City", 1.3, 2017);
+        let civic = new car("CivicX", "Turbo", 2021);
+
+        console.log(corrola)
+        console.log(city)
+        console.log(civic.startengine())
+
+
+        // assignment # 1 END 
+
+
+
+
+
+        function animals(name, type) {
+            this.name = name;
+            this.type = type;
+        }
+
+        animals.prototype.eat = function () {
+            return this.name + " Eating food";
+        }
+
+
+        let cat = new animals("Cat", "Persian Cat");
+        let hen = new animals("Hen", "Australop");
+
+        console.log(cat)
+        console.log(hen.eat());
+
+
+        function dogs(name, type, breed) {
+            animals.call(this, name, type);
+            this.breed = breed;
+
+        }
+
+        dogs.prototype = animals.prototype;
+
+        let dog = new dogs("American Bulldog", "American", "Bulldog")
+        console.log(dog.eat());
+
+
+        animals.prototype.sleep = function () {
+            return this.name + " is sleeping";
+        }
+
+        console.log(dog.sleep());
+
+        animals.prototype.eat = function () {
+            return this.name + " Eating Bones";
+        }
+
+        console.log(dog.eat());
+
+        // assigment 3 end 
+
+
+
+        let shape = {
+            color: "red",
+
+            draw: function () {
+                return " Drwaing a shape"
+            },
+        };
+
+
+
+        let circle = Object.create(shape);
+
+        circle.radius = "Circle";
+
+        console.log(circle.radius + circle.draw())
+
+
+
+        // assignment 4 end 
+
+
+
+        function person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        person.prototype.greet = function () {
+            return "Greeting " + this.name;
+        }
+
+
+
+        function student(name, age, major) {
+            person.call(this, name, age);
+
+            this.major = major;
+        }
+        student.prototype = person.prototype;
+        let stu = new student("hanif", 26, "javascript")
+        console.log(stu.greet())
+
+        // assignment # 5 end 
+
+    </script>
+    <!-- <script src="script.js"></script> -->
+</body>
+
+</html>

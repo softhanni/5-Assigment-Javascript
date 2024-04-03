@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest And Spread Operator Assignments</title>
+</head>
+
+<body>
+    <h1>Assignment: 4 => Rest And Spread Operator Assignments</h1>
+    <h2>Check in Console</h2>
+
+    <script>
+
+        let arr1 = [1, 2, 3, 4, 5];
+        let arr2 = [5, 6, 7, 8, 9, 10];
+
+        let mixArr = [...arr1, ...arr2]
+        console.log(mixArr)
+
+        // array concate
+
+
+        function filterNumbers(...numbers) {
+            // if(numbers%2 == 0){
+            //   console.log(numbers);
+            // }
+
+            numbers.forEach((e) => {
+                if (e % 2 == 0) {
+                    // return e
+                    console.log(e);
+                }
+            });
+        }
+        filterNumbers(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+        // rest op end/
+
+        let obj1 = {
+            name: "hanif"
+        }
+        let obj2 = {
+            age: 26
+        }
+
+
+        let mixObj = { ...obj1, ...obj2 };
+        console.log(mixObj)
+
+        // spread end 
+
+        let student = {
+            name: "hanif",
+            age: 26,
+            grade: "A",
+        }
+
+        function displayStudentInfo() {
+            // console.log(`Name: ${this.name} Age: ${this.age}`)
+
+            let { name, age, ...val } = student;
+            console.log(name, age, val)
+        }
+
+        displayStudentInfo(student)
+
+        // destructuring end 
+
+    </script>
+</body>
+
+</html>
